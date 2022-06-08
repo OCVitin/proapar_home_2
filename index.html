@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PROAPAR</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Exo 2' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+  <!-- Primeiro, a estrutura do cabeçalho, onde ficará nossa logo. -->
+  <div class="cabecalho w3-row">
+    <div id="logo" class="w3-col m4">
+      <p><span id="sigla">PROAPAR</span><br><span id="nome">Programa de Apoio e Auxílio para Refugiadas</span></p>
+    </div>
+    <div class="w3-col m8">
+      <!-- Antes teria algumas coisas aqui, mas foram descartadas no projeto final. Agora, esse grid apenas tem a função de deixar a logotipo proporcional e responsiva. -->
+    </div>
+  </div>
+  <!-- Então, vamos para o conteúdo principal da página! -->
+  <div class="conteudo">
+    <center>
+    <h3>Recomendadas:</h3>
+    <div class="content">
+      <!-- O foco principal da página: um carrossel de imagens feito apenas com HTML e CSS. -->
+      <div class="slides">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+        <input type="radio" name="slide" id="slide5">
+        <!-- Aqui estão separadas as imagens que compõem o carrossel -->
+        <div class="slide s1">
+          <img src="./images/casa1.jpg" alt="casa moderna com luzes laranjas" onclick="on1()">
+          <div class="lugarCasa">
+            <h4>Vila Velha, ES</h4>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/casa2.jpg" alt="casa simples com diversas árvores coloridas" onclick="on2()">
+          <div class="lugarCasa">
+            <h4>Fortaleza, CE</h4>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/casa3.jpg" alt="casa grande no campo" onclick="on3()">
+          <div class="lugarCasa">
+            <h4>Curitiba, PR</h4>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/casa4.jpg" alt="casa moderna com carro estacionado" onclick="on4()">
+          <div class="lugarCasa">
+            <h4>Ouro Preto, MG</h4>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/casa5.jpg" alt="casa moderna do Minecraft" onclick="on5()">
+          <div class="lugarCasa">
+            <h4>Vitória, ES</h4>
+          </div>
+        </div>
+        <!-- Aqui temos uma ligação entre os inputs e a estilização no CSS -->
+        <div class="navigation">
+          <label class="bar" for="slide1"></label>
+          <label class="bar" for="slide2"></label>
+          <label class="bar" for="slide3"></label>
+          <label class="bar" for="slide4"></label>
+          <label class="bar" for="slide5"></label>
+        </div>
+      </div>
+    </div>
+    <!-- Aqui nós temos outras opções de moradias, fora as apresentadas no carrossel, mas não estão ligadas a nenhum card. (Infelizmente, não deu tempo de fazer essas, foi mal Ricardo ): ) -->
+    <h3>Outras opções:</h3>
+    </center>
+    <div class="w3-row">
+      <div class="w3-col m6">
+        <center>
+        <img src="./images/casa1.jpg" alt="casa moderna com luzes laranjas" class="outras">
+        <img src="./images/casa2.jpg" alt="casa simples com diversas árvores coloridas" class="outras">
+        </center>
+      </div>
+      <div class="w3-col m6">
+        <center>
+        <img src="./images/casa3.jpg" alt="casa grande no campo" class="outras">
+        <img src="./images/casa4.jpg" alt="casa moderna com carro estacionado" class="outras">
+        </center>
+      </div>
+    </div>
+  </div>
+  <!-- Com nosso conteúdo completo, vamos ao rodapé da página. -->
+  <div class="rodape">
+    <center>
+      <h5>PROAPAR</h5>
+      <p>Ajude-nos também nas redes sociais:</p>
+      <div>
+        <i class='fab fa-facebook iconesFooter' style='font-size:48px'></i><i class='fab fa-instagram iconesFooter' style='font-size:48px'></i><i class='fab fa-whatsapp iconesFooter' style='font-size:48px'></i><i class='fab fa-twitter iconesFooter' style='font-size:48px'></i>
+      </div>
+      <p id="copyright">Copyright © 2022 Grupo 6 de UX - UVV. Todos os direitos reservados.</p>
+    </center>
+  </div>
+  
+  <!-- Abaixo está uma série de códigos sobre elementos escondidos, serão revelados com as funções no arquivo JavaScript -->
+  <!-- Background com blur e sombra -->
+  <div id="escuro"></div>
+
+  <!-- Card da imagem 1 -->
+  <div class="cardMeu" id="card1">
+    <p class="tituloCard">Moradia em Vila Velha, ES</p><button onclick="off1()" class="fechar">X</button>
+    <button class="denunciar">DENUNCIAR</button>
+    <img src="./images/casa1.jpg" alt="casa moderna com luzes laranjas" class="cardImg">
+    <div class="w3-row textoCard">
+      <div class="w3-col m4">
+        <div class="perfil">
+          <i class="fas fa-user-circle proPic" style="font-size:48px"></i><b> Carmen Miranda</b><br>
+          <i class="fas fa-comment-dots chat" style="font-size:48px"></i><b> Chat</b><br>
+        </div>
+      </div>
+      <div class="w3-col m8">
+        <div class="infoCasa">
+          <span class="tagsMinhas">Disponível</span> <span class="tagsMinhas">Brasil</span> <span class="tagsMinhas">3 pessoas</span> <span class="tagsMinhas">Acessibilidade</span>
+          <h4>Descrição:</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique quibusdam explicabo sequi quo non magni esse rerum vitae culpa, reiciendis dolores consequatur adipisci debitis, voluptatem vel reprehenderit. Veniam, at.</p>
+        </div>
+      </div>
+    </div>
+    <button class="solicitar">Enviar solicitação</button>
+  </div>
+
+  <!-- Card da imagem 2 -->
+  <div class="cardMeu" id="card2">
+    <p class="tituloCard">Moradia em Fortaleza, CE</p><button onclick="off2()" class="fechar">X</button>
+    <button class="denunciar">DENUNCIAR</button>
+    <img src="./images/casa2.jpg" alt="casa simples com diversas árvores coloridas" class="cardImg">
+    <div class="w3-row textoCard">
+      <div class="w3-col m4">
+        <div class="perfil">
+          <i class="fas fa-user-circle proPic" style="font-size:48px"></i><b> Carmen Miranda</b><br>
+          <i class="fas fa-comment-dots chat" style="font-size:48px"></i><b> Chat</b><br>
+        </div>
+      </div>
+      <div class="w3-col m8">
+        <div class="infoCasa">
+          <span class="tagsMinhas">Disponível</span> <span class="tagsMinhas">Brasil</span> <span class="tagsMinhas">3 pessoas</span> <span class="tagsMinhas">Acessibilidade</span>
+          <h4>Descrição:</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique quibusdam explicabo sequi quo non magni esse rerum vitae culpa, reiciendis dolores consequatur adipisci debitis, voluptatem vel reprehenderit. Veniam, at.</p>
+        </div>
+      </div>
+    </div>
+    <button class="solicitar">Enviar solicitação</button>
+  </div>
+
+  <!-- Card da imagem 3 -->
+  <div class="cardMeu" id="card3">
+    <p class="tituloCard">Moradia em Curitiba, PR</p><button onclick="off3()" class="fechar">X</button>
+    <button class="denunciar">DENUNCIAR</button>
+    <img src="./images/casa3.jpg" alt="casa grande no campo" class="cardImg">
+    <div class="w3-row textoCard">
+      <div class="w3-col m4">
+        <div class="perfil">
+          <i class="fas fa-user-circle proPic" style="font-size:48px"></i><b> Carmen Miranda</b><br>
+          <i class="fas fa-comment-dots chat" style="font-size:48px"></i><b> Chat</b><br>
+        </div>
+      </div>
+      <div class="w3-col m8">
+        <div class="infoCasa">
+          <span class="tagsMinhas">Disponível</span> <span class="tagsMinhas">Brasil</span> <span class="tagsMinhas">3 pessoas</span> <span class="tagsMinhas">Acessibilidade</span>
+          <h4>Descrição:</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique quibusdam explicabo sequi quo non magni esse rerum vitae culpa, reiciendis dolores consequatur adipisci debitis, voluptatem vel reprehenderit. Veniam, at.</p>
+        </div>
+      </div>
+    </div>
+    <button class="solicitar">Enviar solicitação</button>
+  </div>
+
+  <!-- Card da imagem 4 -->
+  <div class="cardMeu" id="card4">
+    <p class="tituloCard">Moradia em Ouro Preto, MG</p><button onclick="off4()" class="fechar">X</button>
+    <button class="denunciar">DENUNCIAR</button>
+    <img src="./images/casa4.jpg" alt="casa moderna com carro estacionado" class="cardImg">
+    <div class="w3-row textoCard">
+      <div class="w3-col m4">
+        <div class="perfil">
+          <i class="fas fa-user-circle proPic" style="font-size:48px"></i><b> Carmen Miranda</b><br>
+          <i class="fas fa-comment-dots chat" style="font-size:48px"></i><b> Chat</b><br>
+        </div>
+      </div>
+      <div class="w3-col m8">
+        <div class="infoCasa">
+          <span class="tagsMinhas">Disponível</span> <span class="tagsMinhas">Brasil</span> <span class="tagsMinhas">3 pessoas</span> <span class="tagsMinhas">Acessibilidade</span>
+          <h4>Descrição:</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique quibusdam explicabo sequi quo non magni esse rerum vitae culpa, reiciendis dolores consequatur adipisci debitis, voluptatem vel reprehenderit. Veniam, at.</p>
+        </div>
+      </div>
+    </div>
+    <button class="solicitar">Enviar solicitação</button>
+  </div>
+
+  <!-- Card da imagem 5 -->
+  <div class="cardMeu" id="card5">
+    <p class="tituloCard">Moradia em Vitória, ES</p><button onclick="off5()" class="fechar">X</button>
+    <button class="denunciar">DENUNCIAR</button>
+    <img src="./images/casa5.jpg" alt="casa moderna do Minecraft" class="cardImg">
+    <div class="w3-row textoCard">
+      <div class="w3-col m4">
+        <div class="perfil">
+          <i class="fas fa-user-circle proPic" style="font-size:48px"></i><b> Carmen Miranda</b><br>
+          <i class="fas fa-comment-dots chat" style="font-size:48px"></i><b> Chat</b><br>
+        </div>
+      </div>
+      <div class="w3-col m8">
+        <div class="infoCasa">
+          <span class="tagsMinhas">Disponível</span> <span class="tagsMinhas">Brasil</span> <span class="tagsMinhas">3 pessoas</span> <span class="tagsMinhas">Acessibilidade</span>
+          <h4>Descrição:</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique quibusdam explicabo sequi quo non magni esse rerum vitae culpa, reiciendis dolores consequatur adipisci debitis, voluptatem vel reprehenderit. Veniam, at.</p>
+        </div>
+      </div>
+    </div>
+    <button class="solicitar">Enviar solicitação</button>
+  </div>
+  <!-- FIM! -->
+  <script src="script.js"></script>
+</body>
+
+</html>
